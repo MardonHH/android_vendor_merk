@@ -1,5 +1,5 @@
 ###########################
-# OmniROM common sepolicy
+# Merkmod common sepolicy
 #
 
 # Allow vold to access fuse for fuse-based fs

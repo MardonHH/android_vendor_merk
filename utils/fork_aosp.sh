@@ -3,15 +3,15 @@
 # Licensed under GPLv3
 
 # Configuration
-ANDROID_ROOT=~/omni
+ANDROID_ROOT=~/merk
 PREFIX=android_
 BRANCH=android-4.4
 SOURCE=android-4.4.3_r1.1
 MANIFEST=android/default.xml
-GITHUB_ORG=omnirom
-USERNAME=xplodwild
-GERRIT_REMOTE=ssh://gerrit.omnirom.org:29418
-REMOTE_MANIFEST=omnirom
+GITHUB_ORG=Merkmod
+USERNAME=merkrehan
+GERRIT_REMOTE=ssh://review.merkmod.com:29418
+REMOTE_MANIFEST=Merkmod
 
 # Script
 if [ $# -lt 1 ]; then
@@ -36,7 +36,7 @@ echo "Creating $REPO_NAME on GitHub..."
 curl --user $USERNAME --data "{\"name\":\"$REPO_NAME\"}" https://api.github.com/orgs/$GITHUB_ORG/repos
 
 # Only works if you are a gerrit admin, will create the named project before pushing (gerrit then replicates to git)
-ssh -p 29418 gerrit.omnirom.org gerrit create-project --name $REPO_NAME
+ssh -p 29418 review.merkmod.com gerrit create-project --name $REPO_NAME
 
 echo "Creating branch $BRANCH..."
 pushd $1

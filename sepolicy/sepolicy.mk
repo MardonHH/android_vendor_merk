@@ -1,10 +1,10 @@
 #
 # This policy configuration will be used by all products that
-# inherit from Omni
+# inherit from Merkmod
 #
 
 BOARD_SEPOLICY_DIRS += \
-    vendor/omni/sepolicy
+    vendor/merk/sepolicy
 
 BOARD_SEPOLICY_UNION += \
     file_contexts \

@@ -1,12 +1,12 @@
-PRODUCT_BRAND ?= omni
+PRODUCT_BRAND ?= merkmod
 
 # bootanimation (Some devices cant go over 100fps for a bootani)
 ifneq ($(USE_LOWFPS_BOOTANI),true)
 PRODUCT_COPY_FILES += \
-    vendor/omni/prebuilt/bootanimation/bootanimation.zip:system/media/bootanimation.zip
+    vendor/merk/prebuilt/bootanimation/bootanimation.zip:system/media/bootanimation.zip
 else
 PRODUCT_COPY_FILES += \
-    vendor/omni/prebuilt/bootanimation/lowfps-bootanimation.zip:system/media/bootanimation.zip
+    vendor/merk/prebuilt/bootanimation/lowfps-bootanimation.zip:system/media/bootanimation.zip
 endif
 
 ifeq ($(PRODUCT_GMS_CLIENTID_BASE),)
@@ -34,33 +34,33 @@ endif
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
-    vendor/omni/prebuilt/bin/backuptool.sh:system/bin/backuptool.sh \
-    vendor/omni/prebuilt/bin/backuptool.functions:system/bin/backuptool.functions \
-    vendor/omni/prebuilt/bin/50-hosts.sh:system/addon.d/50-hosts.sh \
-    vendor/omni/prebuilt/bin/blacklist:system/addon.d/blacklist
+    vendor/merk/prebuilt/bin/backuptool.sh:system/bin/backuptool.sh \
+    vendor/merk/prebuilt/bin/backuptool.functions:system/bin/backuptool.functions \
+    vendor/merk/prebuilt/bin/50-hosts.sh:system/addon.d/50-hosts.sh \
+    vendor/merk/prebuilt/bin/blacklist:system/addon.d/blacklist
 
 # init.d support
 PRODUCT_COPY_FILES += \
-    vendor/omni/prebuilt/etc/init.d/00banner:system/etc/init.d/00banner \
-    vendor/omni/prebuilt/bin/sysinit:system/bin/sysinit
+    vendor/merk/prebuilt/etc/init.d/00banner:system/etc/init.d/00banner \
+    vendor/merk/prebuilt/bin/sysinit:system/bin/sysinit
 
 # userinit support
 PRODUCT_COPY_FILES += \
-    vendor/omni/prebuilt/etc/init.d/90userinit:system/etc/init.d/90userinit
+    vendor/merk/prebuilt/etc/init.d/90userinit:system/etc/init.d/90userinit
 
-# Init script file with omni extras
+# Init script file with merkmod extras
 PRODUCT_COPY_FILES += \
-    vendor/omni/prebuilt/etc/init.local.rc:root/init.omni.rc
+    vendor/merk/prebuilt/etc/init.local.rc:root/init.merkmod.rc
 
 # Enable SIP and VoIP on all targets
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
 
 # Additional packages
--include vendor/omni/config/packages.mk
+-include vendor/merk/config/packages.mk
 
 # Versioning
--include vendor/omni/config/version.mk
+-include vendor/merk/config/version.mk
 
 # Add our overlays
-PRODUCT_PACKAGE_OVERLAYS += vendor/omni/overlay/common
+PRODUCT_PACKAGE_OVERLAYS += vendor/merk/overlay/common
