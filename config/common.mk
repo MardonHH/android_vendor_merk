@@ -1,4 +1,4 @@
-PRODUCT_BRAND ?= merkmod
+PRODUCT_BRAND ?= merk
 
 # bootanimation (Some devices cant go over 100fps for a bootani)
 ifneq ($(USE_LOWFPS_BOOTANI),true)
@@ -50,7 +50,7 @@ PRODUCT_COPY_FILES += \
 
 # Init script file with merkmod extras
 PRODUCT_COPY_FILES += \
-    vendor/merk/prebuilt/etc/init.local.rc:root/init.merkmod.rc
+    vendor/merk/prebuilt/etc/init.local.rc:root/init.merk.rc
 
 # Enable SIP and VoIP on all targets
 PRODUCT_COPY_FILES += \
