@@ -5,7 +5,9 @@ PRODUCT_PACKAGES += \
     LatinIME \
     SoundRecorder \
     VideoEditor \
-    VoiceDialer
+    VoiceDialer \
+    Superuser \
+    su
 
 # Additional apps
 PRODUCT_PACKAGES += \
