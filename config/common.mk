@@ -3,6 +3,13 @@ PRODUCT_BRAND ?= merk
 #Su Support
 SUPERUSER_EMBEDDED := true
 
+PRODUCT_PACKAGES := \
+    Superuser \
+    su
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.root_access=3
+
 # bootanimation (Some devices cant go over 100fps for a bootani)
 ifneq ($(USE_LOWFPS_BOOTANI),true)
 PRODUCT_COPY_FILES += \
@@ -32,7 +39,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # enable ADB authentication if not on eng build
 ifneq ($(TARGET_BUILD_VARIANT),eng)
-ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=1
+ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=0
 endif
 
 # Backup Tool
