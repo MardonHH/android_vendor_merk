@@ -2,6 +2,7 @@ PRODUCT_BRAND ?= merk
 
 #Su Support
 SUPERUSER_EMBEDDED := true
+SUPERUSER_PACKAGE_PREFIX := com.android.settings.cyanogenmod.superuser
 
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.root_access=3
