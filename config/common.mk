@@ -3,10 +3,6 @@ PRODUCT_BRAND ?= merk
 #Su Support
 SUPERUSER_EMBEDDED := true
 
-PRODUCT_PACKAGES := \
-    Superuser \
-    su
-
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.root_access=3
 
@@ -39,15 +35,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # enable ADB authentication if not on eng build
 ifneq ($(TARGET_BUILD_VARIANT),eng)
-ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=0
+ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=1
 endif
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
     vendor/merk/prebuilt/bin/backuptool.sh:system/bin/backuptool.sh \
     vendor/merk/prebuilt/bin/backuptool.functions:system/bin/backuptool.functions \
-    vendor/merk/prebuilt/bin/50-hosts.sh:system/addon.d/50-hosts.sh \
-    vendor/merk/prebuilt/bin/blacklist:system/addon.d/blacklist
+    vendor/merk/prebuilt/bin/50-hosts.sh:system/addon.d/50-hosts.sh 
 
 # init.d support
 PRODUCT_COPY_FILES += \
