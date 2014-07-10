@@ -1,5 +1,8 @@
 PRODUCT_BRAND ?= merk
 
+#Su Support
+SUPERUSER_EMBEDDED := true
+
 # bootanimation (Some devices cant go over 100fps for a bootani)
 ifneq ($(USE_LOWFPS_BOOTANI),true)
 PRODUCT_COPY_FILES += \
