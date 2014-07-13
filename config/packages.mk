@@ -4,8 +4,6 @@ PRODUCT_PACKAGES += \
     Development \
     LatinIME \
     SoundRecorder \
-    Superuser \
-    su \
     VideoEditor \
     VoiceDialer
 

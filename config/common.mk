@@ -4,6 +4,13 @@ PRODUCT_BRAND ?= merk
 SUPERUSER_EMBEDDED := true
 SUPERUSER_PACKAGE_PREFIX := com.android.settings.merk.superuser
 
+PRODUCT_PACKAGES += \
+    Superuser \
+    su
+
+PRODUCT_COPY_FILES += \
+    external/koush/Superuser/init.superuser.rc:root/init.superuser.rc \
+
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.root_access=3
 
