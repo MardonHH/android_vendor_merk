@@ -6,13 +6,10 @@ SUPERUSER_PACKAGE_PREFIX := com.android.settings.merk.superuser
 
 PRODUCT_PACKAGES += \
     Superuser \
-    su
+    su 
 
 PRODUCT_COPY_FILES += \
-    external/koush/Superuser/init.superuser.rc:root/init.superuser.rc \
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.root_access=3
+    external/koush/Superuser/init.superuser.rc:root/init.superuser.rc
 
 # bootanimation (Some devices cant go over 100fps for a bootani)
 ifneq ($(USE_LOWFPS_BOOTANI),true)
@@ -39,7 +36,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.setupwizard.enterprise_mode=1 \
     ro.com.android.dateformat=MM-dd-yyyy \
     ro.com.android.dataroaming=false \
-    persist.sys.root_access=1
+    persist.sys.root_access=3
+
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.build.selinux=1
+
+# Thank you, please drive thru!
+PRODUCT_PROPERTY_OVERRIDES += persist.sys.dun.override=0
 
 # enable ADB authentication if not on eng build
 ifneq ($(TARGET_BUILD_VARIANT),eng)
@@ -50,7 +54,8 @@ endif
 PRODUCT_COPY_FILES += \
     vendor/merk/prebuilt/bin/backuptool.sh:system/bin/backuptool.sh \
     vendor/merk/prebuilt/bin/backuptool.functions:system/bin/backuptool.functions \
-    vendor/merk/prebuilt/bin/50-hosts.sh:system/addon.d/50-hosts.sh 
+    vendor/merk/prebuilt/bin/50-hosts.sh:system/addon.d/50-hosts.sh \
+    vendor/merk/prebuilt/bin/blacklist:system/addon.d/blacklist 
 
 # init.d support
 PRODUCT_COPY_FILES += \
