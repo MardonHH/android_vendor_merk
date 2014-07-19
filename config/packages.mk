@@ -11,7 +11,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     audio_effects.conf \
     MonthCalendarWidget \
-    OmniSwitch \
     OpenDelta 
     
 
