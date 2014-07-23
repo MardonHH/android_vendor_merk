@@ -1,0 +1,3 @@
+add_lunch_combo merk_hammerhead-userdebug
+add_lunch_combo merk_p3100-userdebug
+add_lunch_combo merk_jactiveltexx-userdebug
