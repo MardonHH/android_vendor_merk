@@ -4,3 +4,4 @@ add_lunch_combo merk_jactiveltexx-userdebug
 add_lunch_combo merk_mako-userdebug
 add_lunch_combo merk_i9100-userdebug
 add_lunch_combo merk_i9300-userdebug
+add_lunch_combo merk_n7000-userdebug
