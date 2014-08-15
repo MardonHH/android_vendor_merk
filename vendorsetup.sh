@@ -1,3 +1,4 @@
+add_lunch_combo merk_m8-userdebug
 add_lunch_combo merk_p5100-userdebug
 add_lunch_combo merk_hammerhead-userdebug
 add_lunch_combo merk_p3100-userdebug
