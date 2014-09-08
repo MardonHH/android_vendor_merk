@@ -12,7 +12,8 @@ PRODUCT_PACKAGES += \
     audio_effects.conf \
     MonthCalendarWidget \
     OpenDelta \
-    MerkPapers
+    MerkPapers \
+    PrivacyGuard
 
 PRODUCT_PACKAGES += \
     CellBroadcastReceiver
