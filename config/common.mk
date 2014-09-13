@@ -62,6 +62,11 @@ PRODUCT_COPY_FILES += \
     vendor/merk/prebuilt/etc/init.d/00banner:system/etc/init.d/00banner \
     vendor/merk/prebuilt/bin/sysinit:system/bin/sysinit
 
+# Bring in camera effects
+PRODUCT_COPY_FILES +=  \
+    vendor/merk/prebuilt/media/LMprec_508.emd:system/media/LMprec_508.emd \
+    vendor/merk/prebuilt/media/PFFprec_600.emd:system/media/PFFprec_600.emd
+
 # userinit support
 PRODUCT_COPY_FILES += \
     vendor/merk/prebuilt/etc/init.d/90userinit:system/etc/init.d/90userinit
@@ -73,6 +78,9 @@ PRODUCT_COPY_FILES += \
 # Enable SIP and VoIP on all targets
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
+
+# Audio Packages
+-include vendor/merk/config/merk_audio.mk
 
 # Additional packages
 -include vendor/merk/config/packages.mk
